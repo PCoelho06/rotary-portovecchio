@@ -9,7 +9,7 @@ class FonctionTest extends KernelTestCase
 {
     public function getEntity(): Fonction
     {
-        return (new Fonction())->setName('President');
+        return (new Fonction())->setName('Comptable');
     }
 
     public function assertHasErrors(Fonction $fonction, int $nbErrors = 0)
@@ -23,6 +23,7 @@ class FonctionTest extends KernelTestCase
     public function testValidFonction()
     {
         $this->assertHasErrors($this->getEntity(), 0);
+        $this->assertHasErrors($this->getEntity()->setName('Secrétaire'), 0);
     }
 
     public function testInvalidFonction()
