@@ -16,7 +16,7 @@ class Fonction
 
     #[ORM\Column(length: 255)]
     #[Assert\NotBlank()]
-    #[Assert\Regex("/^\p{L}+$/")]
+    #[Assert\Regex("/^\p{L}+$/u")]
     private ?string $name = null;
 
     public function getId(): ?int
