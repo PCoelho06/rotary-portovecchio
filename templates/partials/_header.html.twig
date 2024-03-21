@@ -42,35 +42,28 @@
 						<a class="nav-link" href="#">Contact</a>
 					</li>
 				</ul>
-				{% if is_granted('ROLE_USER') %}
-					<ul class="navbar-nav">
+				<ul class="navbar-nav">
+					{% if is_granted('ROLE_USER') %}
 						{% if is_granted('ROLE_ADMIN') %}
 							<li
 								class="nav-item">
 								{# <a href="{{ path('admin_event_index') }}" class="nav-link">Administration</a> #}
 								<a href="#" class="nav-link btn btn-danger">Administration</a>
 							</li>
+						{% else %}
+							<li class="nav-item">
+								<a href="{{ path('user_edit_password') }}" class="nav-link">Administration</a>
+							</li>
 						{% endif %}
-						<li
-							class="nav-item">
-							{# <a href="{{ path('app_user_profile') }}" class="nav-link">Mon profil</a> #}
-							<a href="#" class="nav-link">Mon profil</a>
+						<li class="nav-item">
+							<a href="{{ path('app_login') }}" class="btn btn-warning">Se déconnecter</a>
 						</li>
-						<li
-							class="nav-item">
-							{# <a href="{{ logout_path() }}" class="nav-link">Se déconnecter</a> #}
-							<a href="#" class="nav-link">Se déconnecter</a>
+					{% else %}
+						<li class="nav-item">
+							<a href="{{ path('app_login') }}" class="btn btn-primary">Se connecter</a>
 						</li>
-					</ul>
-				{% else %}
-					<ul class="navbar-nav">
-						<li
-							class="nav-item">
-							{# <a href="{{ path('app_login') }}" class="nav-link">Se connecter</a> #}
-							<a href="#" class="btn btn-primary">Se connecter</a>
-						</li>
-					</ul>
-				{% endif %}
+					{% endif %}
+				</ul>
 			</div>
 		</div>
 	</nav>
