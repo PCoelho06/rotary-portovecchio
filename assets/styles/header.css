@@ -1,0 +1,26 @@
+.navbar-brand {
+    font-size: 1.7rem;
+    color: var(--primary-color);
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus,
+.navbar-brand:active {
+    color: var(--secondary-color);
+}
+
+.navbar-brand img {
+    max-width: 5rem;
+    aspect-ratio: auto;
+}
+
+.nav-link {
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin: 0 1rem;
+}
+
+.nav-link:hover {
+    color: var(--secondary-color);
+}

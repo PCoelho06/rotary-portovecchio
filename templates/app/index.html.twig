@@ -1,0 +1,18 @@
+{% extends 'homebase.html.twig' %}
+
+{% block title %}Hello AppController!
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('styles/home.css') }}">
+{% endblock %}
+
+{% block content %}
+	<div class="fanion container d-flex justify-content-evenly align-items-center">
+		<img src="{{ asset('images/fanion.png') }}">
+		<div class="home-content text-center">
+			<h1>Bienvenue sur le site du Rotary club de Porto Vecchio</h1>
+			<a href="#" class="btn btn-lg btn-primary my-3">Accéder aux événements</a>
+		</div>
+	</div>
+{% endblock %}

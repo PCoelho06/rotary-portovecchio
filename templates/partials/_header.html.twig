@@ -1,0 +1,77 @@
+<header>
+	<nav class="navbar navbar-expand-lg">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="{{ path('app_home')}}">
+				<img src="{{ asset('images/logo.svg') }}" alt="Logo du Rotary">
+				Rotary Porto Vecchio
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav mx-auto mb-2 mb-xl-0">
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Notre club</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="{{ path('club_history') }}">Notre histoire</a>
+							{# <a class="dropdown-item" href="#">Notre histoire</a> #}
+							<a class="dropdown-item" href="{{ path('club_causes') }}">Nos causes</a>
+							{# <a class="dropdown-item" href="#">Nos causes</a> #}
+							{# <a class="dropdown-item" href="{{ path('app_club_members') }}">Nos membres</a> #}
+							<a class="dropdown-item" href="#">Nos membres</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Événements</a>
+						<div
+							class="dropdown-menu">
+							{# <a class="dropdown-item" href="{{ path('app_events', {state: 'passes'}) }}">Les événements passés</a> #}
+							<a class="dropdown-item" href="#">Les événements passés</a>
+							{# <a class="dropdown-item" href="{{ path('app_events', {state: 'a-venir'}) }}">Les événements à venir</a> #}
+							<a class="dropdown-item" href="#">Les événements à venir</a>
+						</li>
+					</li>
+					<li
+						class="nav-item">
+						{# <a class="nav-link" href="{{ path('app_gallery') }}">Galerie</a> #}
+						<a class="nav-link" href="#">Galerie</a>
+					</li>
+					<li
+						class="nav-item">
+						{# <a class="nav-link" href="{{ path('app_contact') }}">Contact</a> #}
+						<a class="nav-link" href="#">Contact</a>
+					</li>
+				</ul>
+				{% if is_granted('ROLE_USER') %}
+					<ul class="navbar-nav">
+						{% if is_granted('ROLE_ADMIN') %}
+							<li
+								class="nav-item">
+								{# <a href="{{ path('admin_event_index') }}" class="nav-link">Administration</a> #}
+								<a href="#" class="nav-link btn btn-danger">Administration</a>
+							</li>
+						{% endif %}
+						<li
+							class="nav-item">
+							{# <a href="{{ path('app_user_profile') }}" class="nav-link">Mon profil</a> #}
+							<a href="#" class="nav-link">Mon profil</a>
+						</li>
+						<li
+							class="nav-item">
+							{# <a href="{{ logout_path() }}" class="nav-link">Se déconnecter</a> #}
+							<a href="#" class="nav-link">Se déconnecter</a>
+						</li>
+					</ul>
+				{% else %}
+					<ul class="navbar-nav">
+						<li
+							class="nav-item">
+							{# <a href="{{ path('app_login') }}" class="nav-link">Se connecter</a> #}
+							<a href="#" class="btn btn-primary">Se connecter</a>
+						</li>
+					</ul>
+				{% endif %}
+			</div>
+		</div>
+	</nav>
+</header>
