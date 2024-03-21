@@ -8,3 +8,4 @@ import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/app.css";
 import "./styles/header.css";
+import "./styles/club.css";

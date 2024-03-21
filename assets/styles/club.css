@@ -1,0 +1,73 @@
+.club {
+    width: 75%;
+    margin: auto;
+}
+
+.club h1 {
+    color: var(--primary-color);
+}
+
+section {
+    margin: 2rem 0;
+}
+
+.section-title-left,
+.section-title-right {
+    width: 50%;
+    background-color: var(--primary-color);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.section-title-left {
+    clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 0% 100%);
+    padding-left: 1rem;
+    border-radius: 10rem 0 0 10rem;
+}
+
+.section-title-right {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 25% 100%);
+    padding-right: 1rem;
+    border-radius: 0 10rem 10rem 0;
+}
+
+.section-title-left h2 {
+    transform: translateX(-10%);
+    width: 75%;
+    text-align: center;
+}
+
+.section-title-right h2 {
+    transform: translateX(10%);
+    width: 75%;
+    text-align: center;
+}
+
+.section-content-right,
+.section-content-left {
+    width: 50%;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+
+.section-content-right {
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.section-content-left {
+    border-top: 2px solid var(--primary-color);
+}
+
+.spacer {
+    display: flex;
+    justify-content: center;
+}
+
+.spacer img {
+    width: 5rem;
+}
