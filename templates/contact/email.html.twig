@@ -1,0 +1,52 @@
+<style>
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+		font-family: 'Neo Sans Arabic', sans-serif;
+	}
+	header {
+		background-color: #1d4990;
+		color: #f7a81b;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1.5rem;
+		padding: 0.5rem;
+	}
+	header > img {
+		max-width: 5rem;
+		aspect-ratio: auto;
+	}
+	main {
+		margin: 1rem;
+	}
+	.message {
+		border: 2px solid #1d4990;
+		padding: 1rem;
+		width: 80%;
+		margin: 1rem auto;
+	}
+</style>
+
+<header>
+	<img src="{{ email.image('@images/logo.svg') }}" alt="Logo">
+	<h1>Rotary Porto Vecchio</h1>
+</header>
+
+<main>
+	<p>
+		{{ username }}
+		a cherché à vous joindre à l'aide du formulaire de contact du site web du Rotary.<br>
+		Voici son message :
+	</p>
+	<p class="message">
+		{{ message | nl2br }}
+	</p>
+
+	<p>
+		Vous pouvez lui répondre à l'adresse suivante :
+		{{ email.replyTo[0].address }}
+		ou cliquer directement sur répondre sur ce mail.
+	</p>
+</main>

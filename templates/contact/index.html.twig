@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ContactController!
+{% endblock %}
+
+{% block body %}
+	<div class="container my-5">
+		{% for message in app.flashes('success') %}
+			<div class="alert alert-success alert-dismissible fade show" role="alert">
+				{{ message }}
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+		{% endfor %}
+		<section class="spacer">
+			<img src="{{ asset('images/logo.svg') }}" alt="">
+		</section>
+		<h1 class="text-center my-3">Nous contacter</h1>
+
+		<div class="w-50 mx-auto">
+			{{ form_start(form) }}
+			{{ form_row(form.firstname) }}
+			{{ form_row(form.lastname) }}
+			{{ form_row(form.email) }}
+			{{ form_row(form.message) }}
+			<div class="text-center my-3">
+				<button type="submit" class="btn btn-lg btn-primary">Envoyer le message</button>
+			</div>
+			{{ form_end(form) }}
+		</div>
+	</div>
+{% endblock %}
