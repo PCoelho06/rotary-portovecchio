@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos membres
+{% endblock %}
+
+{% block body %}
+	<div class="container club">
+		<h1 class="text-center my-3">
+			Le Rotary Club de Portovecchio :
+			<br>
+			Les membres
+		</h1>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th scope="col"></th>
+					<th scope="col">Nom Prénom</th>
+					<th scope="col">Fonction</th>
+					<th scope="col">Adresse email</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for member in members %}
+					<tr>
+						<th scope="row" class="text-center">
+							{% if member.isHonorary %}
+								<i class="fa-solid fa-award" title="Membre honoraire"></i>
+							{% endif %}
+						</th>
+						<td>{{ member.lastname|upper ~ ' ' ~ member.firstname }}</td>
+						<td>
+							{% if member.fonction is not empty %}
+								{{ member.fonction.name }}
+							{% endif %}
+						</td>
+						<td>{{ member.email }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+{% endblock %}

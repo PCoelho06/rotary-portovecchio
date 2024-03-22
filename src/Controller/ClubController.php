@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -22,8 +23,11 @@ class ClubController extends AbstractController
     }
 
     #[Route('/membres', name: 'members')]
-    public function members(): Response
+    public function members(UserRepository $userRepository): Response
     {
-        return $this->render('club/members.html.twig');
+        $members = $userRepository->findAll();
+        return $this->render('club/members.html.twig', [
+            'members' => $members
+        ]);
     }
 }
