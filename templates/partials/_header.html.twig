@@ -41,10 +41,8 @@
 				<ul class="navbar-nav">
 					{% if is_granted('ROLE_USER') %}
 						{% if is_granted('ROLE_ADMIN') %}
-							<li
-								class="nav-item">
-								{# <a href="{{ path('admin_event_index') }}" class="nav-link">Administration</a> #}
-								<a href="#" class="nav-link btn btn-danger">Administration</a>
+							<li class="nav-item">
+								<a href="#" class="btn btn-primary mx-3">Administration</a>
 							</li>
 						{% else %}
 							<li class="nav-item">
@@ -52,7 +50,7 @@
 							</li>
 						{% endif %}
 						<li class="nav-item">
-							<a href="{{ path('app_login') }}" class="btn btn-warning">Se déconnecter</a>
+							<a href="{{ path('app_logout') }}" class="btn btn-warning">Se déconnecter</a>
 						</li>
 					{% else %}
 						<li class="nav-item">
